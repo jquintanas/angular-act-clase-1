@@ -47,19 +47,16 @@ export class TallerComponent implements OnInit {
             let identificador = event.data.param2;
             let dicData = event.data.dic1;
             let cont2 = event.data.contador;
-            for (let id of dicData.keys()) {
-              console.log(id);
-              if (id == idAutor) {
-                console.log("encontre el id");
+            dicData.forEach((value: string, id: string) => {
+              if(id == idAutor){
                 $("#divG" + identificador).empty();
                 for (var i = 0; i < dicData.get(id).length; i++) {
-                  console.log(i);
                   var pa = $("<p></p>").text(dicData.get(id)[i]);
                   pa.addClass("text-center text-light")
                   $("#divG" + identificador).append(pa);
                 }
               }
-            }
+            });
             for (var j = 1; j <= cont2; j++) {
               if (j != identificador) {
                 $("#divG" + j).hide();
@@ -77,8 +74,8 @@ export class TallerComponent implements OnInit {
             let identificador = event.data.param2;
             let dicData = event.data.dic1;
             let cont2 = event.data.contador;
-            for (var id of dicData.keys()) {
-              if (id == idAutor) {
+            dicData.forEach((value: string, id: string) => {
+              if(id == idAutor){
                 $("#divG" + identificador).empty();
                 for (var i = 0; i < dicData.get(id).length; i++) {
                   var pa = $("<p></p>").text(dicData.get(id)[i]);
@@ -86,7 +83,7 @@ export class TallerComponent implements OnInit {
                   $("#divG" + identificador).append(pa);
                 }
               }
-            }
+            });
             for (var j = 1; j <= cont2; j++) {
               if (j != identificador) {
                 $("#divG" + j).hide();
@@ -115,8 +112,8 @@ export class TallerComponent implements OnInit {
             let identificador = event.data.param2;
             let dicData = event.data.dic1;
             let cont2 = event.data.contador;
-            for (var id of dicData.keys()) {
-              if (id == idAutor) {
+            dicData.forEach((value: string, id: string) => {
+              if(id == idAutor){
                 $("#divG" + identificador).empty();
                 for (var i = 0; i < dicData.get(id).length; i++) {
                   var pa = $("<p></p>").text(dicData.get(id)[i]);
@@ -124,7 +121,7 @@ export class TallerComponent implements OnInit {
                   $("#divG" + identificador).append(pa);
                 }
               }
-            }
+            });
             for (var j = 1; j <= cont2; j++) {
               if (j != identificador) {
                 $("#divG" + j).hide();

@@ -26,10 +26,9 @@ export class TallerComponent implements OnInit {
       }
       //extra codigo
       var principal = $("#principal");
-      //var principal = document.getElementById("princcipal");
       var maximo = this.listaAutores.length - (this.listaAutores.length % 5);
       for (var i = 0; i < maximo; i++) {
-        var divA = $("<div></div>").addClass("col-sm-2 ml-1 card");
+        var divA = $("<div></div>").addClass("col-sm-2 ml-1 mr-1 mt-2 mb-2 card d-flex justify-content-center pt-2 text-center");
         var name = $("<h5></h5>");
         var name = $("<h5></h5>").text(this.dicNombres.get(this.listaAutores[i]));
         divA.append(name);
@@ -38,7 +37,7 @@ export class TallerComponent implements OnInit {
         let idAutor= this.listaAutores[i];
         let identificador = this.cont2;
         if (this.cont % 5 == 0) {
-          var divG = $("<div></div>").addClass("col-sm-12");
+          var divG = $("<div></div>").addClass("col-sm-10 ml-2");
           divG.attr("id", "divG" + this.cont2);
           divG.addClass("bg-dark mt-2 mb-2");
           principal.append(divG);
@@ -52,7 +51,7 @@ export class TallerComponent implements OnInit {
                 $("#divG" + identificador).empty();
                 for (var i = 0; i < dicData.get(id).length; i++) {
                   var pa = $("<p></p>").text(dicData.get(id)[i]);
-                  pa.addClass("text-center text-light")
+                  pa.addClass("text-center text-light mt-1")
                   $("#divG" + identificador).append(pa);
                 }
               }
@@ -96,12 +95,12 @@ export class TallerComponent implements OnInit {
         }
       }
       for (i; i < this.listaAutores.length; i++) {
-        var divA = $("<div></div>").addClass("col-sm-2 ml-1 card");
+        var divA = $("<div></div>").addClass("col-sm-2 ml-1 mr-1 mt-2 mb-2 card d-flex justify-content-center pt-2 text-center");
         var name = $("<h5></h5>").text(this.dicNombres.get(this.listaAutores[i]));
         divA.append(name);
         principal.append(divA);
         if (i + 1 == this.listaAutores.length) {
-          var divG = $("<div></div>").addClass("col-sm-12");
+          var divG = $("<div></div>").addClass("col-sm-10 ml-2");
           divG.attr("id", "divG" + this.cont2);
           divG.addClass("bg-dark mt-2 mb-2");
           principal.append(divG);
